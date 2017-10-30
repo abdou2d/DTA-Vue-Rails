@@ -18,6 +18,8 @@ Npm install
 Npm run start
 ```
 
+After seeding there are 5 user available for you to login with. Each user has the email format `firstuser@example.com` `seconduser@example.com` and so on. The password for all users is `password`.
+
 ## Overview
 I have tried to keep all the output as close to what came out of the generators (Rails generators and [Vue-webpack CLI](https://github.com/vuejs-templates/webpack)) with a few exceptions.
 
