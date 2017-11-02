@@ -44,7 +44,7 @@ A simple store is used to hold user data which is returned on login and token ch
 
 ## Still to do
 * add confirmable
-  * Show custom overrides to devise_token_auth controllers to remove redirects and change mailers to match 
-* Error handling for responses
+  * Show custom overrides to devise_token_auth controllers to remove redirects and change mailers to match
+* add reset password
+  * show custom overrides to devise_token_auth controllers to remove redirects and change mailers to match
 * Deal with `401` on initial load if user headers are incorrect (doesn’t really affect function, just annoying to have a console error)
-* Add registration so users don't have to use seeds
