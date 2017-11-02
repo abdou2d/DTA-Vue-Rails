@@ -58,12 +58,16 @@
             <input class="input" type="text" placeholder="Enter your email" v-model="credentials.email" >
           </div>
           <div class="field has-text-left">
+            <label class="label">Username</label>
+            <input class="input" type="text" placeholder="Enter a username" v-model="credentials.user_name" >
+          </div>
+          <div class="field has-text-left">
             <label class="label">Password</label>
-            <input class="input" type="text" placeholder="Enter a password" v-model="credentials.password" >
+            <input class="input" type="password" placeholder="Enter a password" v-model="credentials.password" >
           </div>
           <div class="field has-text-left">
             <label class="label">Password confirmation</label>
-            <input class="input" type="text" placeholder="Confirm your password" v-model="credentials.password_confirmation" >
+            <input class="input" type="password" placeholder="Confirm your password" v-model="credentials.password_confirmation" >
           </div>
           <div class="field">
             <div class="control">
@@ -97,6 +101,7 @@
           email: '',
           password: '',
           password_confirmation: '',
+          user_name: '',
         },
         errors: [],
         loginTab: true,
@@ -128,6 +133,7 @@
         // Submit user info
         axios.post(REGISTER_URL, {
           email: this.credentials.email,
+          user_name: this.credentials.user_name,
           password: this.credentials.password,
           password_confirmation: this.credentials.password_confirmation,
         })
@@ -135,7 +141,7 @@
         .then(() => {
           this.registerSuccess = true;
           this.loginTab = true;
-          // Clear password, but leave username
+          // Clear password, but leave email
           this.credentials.password = '';
           this.credentials.password_confirmation = '';
         })
