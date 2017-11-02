@@ -7,8 +7,8 @@
         <!-- Tab navigation between login and register -->
         <div class="tabs">
           <ul>
-            <li :class="{ 'is-active' : loginTab }"><a @click="loginTab = true">Login</a></li>
-            <li :class="{ 'is-active' : !loginTab }"><a @click="loginTab = false">Signup</a></li>
+            <li :class="{ 'is-active' : loginTab }"><a @click="swapForm">Login</a></li>
+            <li :class="{ 'is-active' : !loginTab }"><a @click="swapForm">Signup</a></li>
           </ul>
         </div>
         <!-- End of tab display -->
@@ -123,7 +123,7 @@
         })
         // If error(s), log to user
         .catch((error) => {
-          error.response.data.errors.full_messages.forEach((errorText) => {
+          error.response.data.errors.forEach((errorText) => {
             this.errors.push(errorText);
           });
         });
@@ -144,6 +144,9 @@
           // Clear password, but leave email
           this.credentials.password = '';
           this.credentials.password_confirmation = '';
+          this.credientials.user_name = '';
+          // Clear errors
+          this.errors = [];
         })
         // If error(s), log to user
         .catch((error) => {
@@ -153,6 +156,14 @@
         });
       },
 
+      swapForm() {
+        // Change tab
+        this.loginTab = !this.loginTab;
+        // Clear data in form
+        Object.keys(this.credentials).forEach(value => this.credentials[value] = '');
+        // Clear errors
+        this.errors = [];
+      },
     },
   };
 </script>
