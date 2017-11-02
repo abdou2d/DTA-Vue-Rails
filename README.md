@@ -48,3 +48,6 @@ A simple store is used to hold user data which is returned on login and token ch
 * add reset password
   * show custom overrides to devise_token_auth controllers to remove redirects and change mailers to match
 * Deal with `401` on initial load if user headers are incorrect (doesn’t really affect function, just annoying to have a console error)
+
+## Known issues
+* Tokens are not invalided on logout, Axious isn't passing headers which are required for devise_token_auth to find user
