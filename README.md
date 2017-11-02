@@ -31,6 +31,7 @@ I have tried to keep all the output as close to what came out of the generators 
 * Devise_token_auth 
   * configured without omniauthable or confirmable
   * current password is required for password changes
+  * Tokens do NOT change on each request
 * Vue
   * axios handles requests
   * [Bulma](https://github.com/jgthms/bulma) adds some basic styling
